@@ -1,0 +1,13 @@
+Android プログラム
+
+■マニフェスト設定
+端末再起動時のService自動起動設定
+
+端末によっては以下の設定がないと、再起動できない模様（例：Nexus5 OS5.0）
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED">
+
+■Wi-Fiトリガー
+同一SSIDのトリガを、同時期の有効期間で、複数登録した場合
+
+検知可能なトリガは１つだけ
+検知して欲しいトリガ以外を無効にする、削除する必要がある

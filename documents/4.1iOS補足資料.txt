@@ -1,0 +1,24 @@
+iOS プログラム
+
+【Tips】
+■アプリキル状態からのGeofenceイベント
+
+アプリが完全に終了している場合でも、Geofenceのイベントが発生すると、アプリがバックグラウンドで自動的に立ち上がる。 しかし、通知に表示するためのデータはメモリに保存されているため、アプリが終了した段階で削除されている。 そのため、通知に必要なデータは存在しないことがあり、通知から起動しても正常に検知結果を取得できない。
+
+アプリキル状態からGeofenceのイベントは、以下の順で発生する。
+
+application:didFinishLaunchingWithOptions:
+viewDidLoad(Is Initial View Controllerに設定されているView Controller)
+viewWillAppear:
+viewDidAppear:
+locationManager:didEnterRegion:(-viewDidAppear:で検知開始した場合)
+locationManager:didEnterRegion:でローカル通知を出し、その通知から起動すると、以下の順でイベントが発生する。
+
+applicationWillEnterForeground:
+application:didReceiveLocalNotification:
+applicationDidBecomeActive:
+したがって、正常に通知を表示させるためには、locationManager:didEnterRegion:の前までに、データを取得する必要がある。 ライブラリでは、最新のデータを保存しているので、[CTLContentTrigger -loadEntriesAtLastTime]を適切なタイミングで呼び出すことにより、アプリキル状態からでも正常に通知を表示することができる。
+
+■通知にメッセージを表示する
+
+サーバコードでmasterバケツからtriggerバケツにコピーするフィールドにdescriptionを追加すると、バックグラウンドからの通知にメッセージが追加される。

@@ -1,0 +1,496 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF10ACEA1A9ACF7200194B02 /* LOLocationObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = BF10ACE91A9ACF7200194B02 /* LOLocationObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF10ACF01A9ACF7200194B02 /* LOLocationObserver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF10ACE41A9ACF7200194B02 /* LOLocationObserver.framework */; };
+		BF10ACF71A9ACF7200194B02 /* LocationObserverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10ACF61A9ACF7200194B02 /* LocationObserverTests.m */; };
+		BF10AD171A9AD03C00194B02 /* LOBLEObserveEntryBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10AD021A9AD03B00194B02 /* LOBLEObserveEntryBuilder.m */; };
+		BF10AD181A9AD03C00194B02 /* LOBLEObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = BF10AD031A9AD03B00194B02 /* LOBLEObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF10AD191A9AD03C00194B02 /* LOBLEObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10AD041A9AD03B00194B02 /* LOBLEObserver.m */; };
+		BF10AD1B1A9AD03C00194B02 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = BF10AD061A9AD03B00194B02 /* Common.h */; };
+		BF10AD1E1A9AD03C00194B02 /* LOGeofenceObserveEntryBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10AD091A9AD03B00194B02 /* LOGeofenceObserveEntryBuilder.m */; };
+		BF10AD1F1A9AD03C00194B02 /* LOGeofenceObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = BF10AD0A1A9AD03B00194B02 /* LOGeofenceObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF10AD201A9AD03C00194B02 /* LOGeofenceObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10AD0B1A9AD03B00194B02 /* LOGeofenceObserver.m */; };
+		BF10AD221A9AD03C00194B02 /* LOLocationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10AD0D1A9AD03B00194B02 /* LOLocationObserver.m */; };
+		BF10AD231A9AD03C00194B02 /* LOLocationObserver+Friend.h in Headers */ = {isa = PBXBuildFile; fileRef = BF10AD0E1A9AD03B00194B02 /* LOLocationObserver+Friend.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF10AD261A9AD03C00194B02 /* LOEntryBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10AD111A9AD03B00194B02 /* LOEntryBuilder.m */; };
+		BF10AD271A9AD03C00194B02 /* LOEntryBuilder+Friend.h in Headers */ = {isa = PBXBuildFile; fileRef = BF10AD121A9AD03B00194B02 /* LOEntryBuilder+Friend.h */; };
+		BF10AD281A9AD03C00194B02 /* LOObserveResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10AD131A9AD03B00194B02 /* LOObserveResult.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF10ACF11A9ACF7200194B02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF10ACDB1A9ACF7200194B02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF10ACE31A9ACF7200194B02;
+			remoteInfo = LocationObserver;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BF10ACE41A9ACF7200194B02 /* LOLocationObserver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LOLocationObserver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF10ACE81A9ACF7200194B02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF10ACE91A9ACF7200194B02 /* LOLocationObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LOLocationObserver.h; sourceTree = "<group>"; };
+		BF10ACEF1A9ACF7200194B02 /* LOLocationObserverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LOLocationObserverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF10ACF51A9ACF7200194B02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF10ACF61A9ACF7200194B02 /* LocationObserverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationObserverTests.m; sourceTree = "<group>"; };
+		BF10AD021A9AD03B00194B02 /* LOBLEObserveEntryBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOBLEObserveEntryBuilder.m; sourceTree = "<group>"; };
+		BF10AD031A9AD03B00194B02 /* LOBLEObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOBLEObserver.h; sourceTree = "<group>"; };
+		BF10AD041A9AD03B00194B02 /* LOBLEObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOBLEObserver.m; sourceTree = "<group>"; };
+		BF10AD061A9AD03B00194B02 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		BF10AD091A9AD03B00194B02 /* LOGeofenceObserveEntryBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOGeofenceObserveEntryBuilder.m; sourceTree = "<group>"; };
+		BF10AD0A1A9AD03B00194B02 /* LOGeofenceObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOGeofenceObserver.h; sourceTree = "<group>"; };
+		BF10AD0B1A9AD03B00194B02 /* LOGeofenceObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOGeofenceObserver.m; sourceTree = "<group>"; };
+		BF10AD0D1A9AD03B00194B02 /* LOLocationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOLocationObserver.m; sourceTree = "<group>"; };
+		BF10AD0E1A9AD03B00194B02 /* LOLocationObserver+Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LOLocationObserver+Friend.h"; sourceTree = "<group>"; };
+		BF10AD111A9AD03B00194B02 /* LOEntryBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOEntryBuilder.m; sourceTree = "<group>"; };
+		BF10AD121A9AD03B00194B02 /* LOEntryBuilder+Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LOEntryBuilder+Friend.h"; sourceTree = "<group>"; };
+		BF10AD131A9AD03B00194B02 /* LOObserveResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOObserveResult.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF10ACE01A9ACF7200194B02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF10ACEC1A9ACF7200194B02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF10ACF01A9ACF7200194B02 /* LOLocationObserver.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF10ACDA1A9ACF7200194B02 = {
+			isa = PBXGroup;
+			children = (
+				BF10ACE61A9ACF7200194B02 /* LOLocationObserver */,
+				BF10ACF31A9ACF7200194B02 /* LocationObserverTests */,
+				BF10ACE51A9ACF7200194B02 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BF10ACE51A9ACF7200194B02 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF10ACE41A9ACF7200194B02 /* LOLocationObserver.framework */,
+				BF10ACEF1A9ACF7200194B02 /* LOLocationObserverTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF10ACE61A9ACF7200194B02 /* LOLocationObserver */ = {
+			isa = PBXGroup;
+			children = (
+				BF10AD2D1A9AD06C00194B02 /* LOLocationObserver */,
+				BF10AD2B1A9AD04D00194B02 /* LOGeofenceObserver */,
+				BF10AD2A1A9AD04200194B02 /* LOBLEObserver */,
+				BF10AD061A9AD03B00194B02 /* Common.h */,
+				BF10ACE71A9ACF7200194B02 /* Supporting Files */,
+			);
+			path = LOLocationObserver;
+			sourceTree = "<group>";
+		};
+		BF10ACE71A9ACF7200194B02 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF10ACE81A9ACF7200194B02 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF10ACF31A9ACF7200194B02 /* LocationObserverTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF10ACF61A9ACF7200194B02 /* LocationObserverTests.m */,
+				BF10ACF41A9ACF7200194B02 /* Supporting Files */,
+			);
+			path = LocationObserverTests;
+			sourceTree = "<group>";
+		};
+		BF10ACF41A9ACF7200194B02 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF10ACF51A9ACF7200194B02 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF10AD2A1A9AD04200194B02 /* LOBLEObserver */ = {
+			isa = PBXGroup;
+			children = (
+				BF10AD021A9AD03B00194B02 /* LOBLEObserveEntryBuilder.m */,
+				BF10AD031A9AD03B00194B02 /* LOBLEObserver.h */,
+				BF10AD041A9AD03B00194B02 /* LOBLEObserver.m */,
+			);
+			name = LOBLEObserver;
+			path = ../LOLocationObserver;
+			sourceTree = "<group>";
+		};
+		BF10AD2B1A9AD04D00194B02 /* LOGeofenceObserver */ = {
+			isa = PBXGroup;
+			children = (
+				BF10AD091A9AD03B00194B02 /* LOGeofenceObserveEntryBuilder.m */,
+				BF10AD0A1A9AD03B00194B02 /* LOGeofenceObserver.h */,
+				BF10AD0B1A9AD03B00194B02 /* LOGeofenceObserver.m */,
+			);
+			name = LOGeofenceObserver;
+			path = ../LOLocationObserver;
+			sourceTree = "<group>";
+		};
+		BF10AD2D1A9AD06C00194B02 /* LOLocationObserver */ = {
+			isa = PBXGroup;
+			children = (
+				BF10ACE91A9ACF7200194B02 /* LOLocationObserver.h */,
+				BF10AD0D1A9AD03B00194B02 /* LOLocationObserver.m */,
+				BF10AD0E1A9AD03B00194B02 /* LOLocationObserver+Friend.h */,
+				BF10AD111A9AD03B00194B02 /* LOEntryBuilder.m */,
+				BF10AD121A9AD03B00194B02 /* LOEntryBuilder+Friend.h */,
+				BF10AD131A9AD03B00194B02 /* LOObserveResult.m */,
+			);
+			name = LOLocationObserver;
+			path = ../LOLocationObserver;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BF10ACE11A9ACF7200194B02 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF10AD1F1A9AD03C00194B02 /* LOGeofenceObserver.h in Headers */,
+				BF10AD181A9AD03C00194B02 /* LOBLEObserver.h in Headers */,
+				BF10AD231A9AD03C00194B02 /* LOLocationObserver+Friend.h in Headers */,
+				BF10ACEA1A9ACF7200194B02 /* LOLocationObserver.h in Headers */,
+				BF10AD271A9AD03C00194B02 /* LOEntryBuilder+Friend.h in Headers */,
+				BF10AD1B1A9AD03C00194B02 /* Common.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		BF10ACE31A9ACF7200194B02 /* LOLocationObserver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF10ACFA1A9ACF7200194B02 /* Build configuration list for PBXNativeTarget "LOLocationObserver" */;
+			buildPhases = (
+				BF10ACDF1A9ACF7200194B02 /* Sources */,
+				BF10ACE01A9ACF7200194B02 /* Frameworks */,
+				BF10ACE11A9ACF7200194B02 /* Headers */,
+				BF10ACE21A9ACF7200194B02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LOLocationObserver;
+			productName = LocationObserver;
+			productReference = BF10ACE41A9ACF7200194B02 /* LOLocationObserver.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BF10ACEE1A9ACF7200194B02 /* LOLocationObserverTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF10ACFD1A9ACF7200194B02 /* Build configuration list for PBXNativeTarget "LOLocationObserverTests" */;
+			buildPhases = (
+				BF10ACEB1A9ACF7200194B02 /* Sources */,
+				BF10ACEC1A9ACF7200194B02 /* Frameworks */,
+				BF10ACED1A9ACF7200194B02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF10ACF21A9ACF7200194B02 /* PBXTargetDependency */,
+			);
+			name = LOLocationObserverTests;
+			productName = LocationObserverTests;
+			productReference = BF10ACEF1A9ACF7200194B02 /* LOLocationObserverTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF10ACDB1A9ACF7200194B02 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LOO;
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = upft;
+				TargetAttributes = {
+					BF10ACE31A9ACF7200194B02 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 4BN2BKDBX2;
+					};
+					BF10ACEE1A9ACF7200194B02 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = BF10ACDE1A9ACF7200194B02 /* Build configuration list for PBXProject "LocationObserver" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BF10ACDA1A9ACF7200194B02;
+			productRefGroup = BF10ACE51A9ACF7200194B02 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF10ACE31A9ACF7200194B02 /* LOLocationObserver */,
+				BF10ACEE1A9ACF7200194B02 /* LOLocationObserverTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF10ACE21A9ACF7200194B02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF10ACED1A9ACF7200194B02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF10ACDF1A9ACF7200194B02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF10AD281A9AD03C00194B02 /* LOObserveResult.m in Sources */,
+				BF10AD171A9AD03C00194B02 /* LOBLEObserveEntryBuilder.m in Sources */,
+				BF10AD191A9AD03C00194B02 /* LOBLEObserver.m in Sources */,
+				BF10AD221A9AD03C00194B02 /* LOLocationObserver.m in Sources */,
+				BF10AD1E1A9AD03C00194B02 /* LOGeofenceObserveEntryBuilder.m in Sources */,
+				BF10AD201A9AD03C00194B02 /* LOGeofenceObserver.m in Sources */,
+				BF10AD261A9AD03C00194B02 /* LOEntryBuilder.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF10ACEB1A9ACF7200194B02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF10ACF71A9ACF7200194B02 /* LocationObserverTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF10ACF21A9ACF7200194B02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF10ACE31A9ACF7200194B02 /* LOLocationObserver */;
+			targetProxy = BF10ACF11A9ACF7200194B02 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BF10ACF81A9ACF7200194B02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BF10ACF91A9ACF7200194B02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BF10ACFB1A9ACF7200194B02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = LOLocationObserver/Info.plist;
+				INSTALL_PATH = "@rpath";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BF10ACFC1A9ACF7200194B02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = LOLocationObserver/Info.plist;
+				INSTALL_PATH = "@rpath";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BF10ACFE1A9ACF7200194B02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LocationObserverTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BF10ACFF1A9ACF7200194B02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LocationObserverTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF10ACDE1A9ACF7200194B02 /* Build configuration list for PBXProject "LocationObserver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF10ACF81A9ACF7200194B02 /* Debug */,
+				BF10ACF91A9ACF7200194B02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF10ACFA1A9ACF7200194B02 /* Build configuration list for PBXNativeTarget "LOLocationObserver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF10ACFB1A9ACF7200194B02 /* Debug */,
+				BF10ACFC1A9ACF7200194B02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF10ACFD1A9ACF7200194B02 /* Build configuration list for PBXNativeTarget "LOLocationObserverTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF10ACFE1A9ACF7200194B02 /* Debug */,
+				BF10ACFF1A9ACF7200194B02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF10ACDB1A9ACF7200194B02 /* Project object */;
+}

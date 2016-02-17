@@ -1,0 +1,307 @@
+<!doctype html>
+<!--
+     Copyright 2016 Kii Consortium
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+   -->
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="lib/bootstrap.css">
+    <link rel="stylesheet" href="lib/bootstrap-datetimepicker.min.css">
+    <script src="lib/jquery.js"></script>
+    <script src="lib/moment.js"></script>
+    <script src="lib/bootstrap.js"></script>
+    <script src="lib/bootstrap-datetimepicker.min.js"></script>
+    <script src="lib/underscore.js"></script>
+    <script src="lib/handlebars.js"></script>
+    <script src="lib/backbone.js"></script>
+
+    <script src="KiiSDK.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        // initialize the Kii SDK
+        Kii.initializeWithSite("AppIDを入れてください", "AppKeyを入れてください", KiiSite.JP)
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="page-header">
+          <h1>KiiCloud CMS</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div id="app"></div>
+      </div>
+    </div>
+
+
+
+
+
+    <script src="js/namespace.js"></script>
+    <script src="js/util/download.js"></script>
+    <script src="js/util/fileLoader.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/collections/bucketBase.js"></script>
+    <script src="js/models/loginStatus.js"></script>
+    <script src="js/models/objectBase.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/templates/layout.js"></script>
+    <script src="js/views/bucketsView.js"></script>
+    <script src="js/views/loginView.js"></script>
+    <script src="js/views/bucketView.js"></script>
+    <script src="js/views/objectView.js"></script>
+    <script src="js/views/objectFormView.js"></script>
+    <script src="js/views/preView.js"></script>
+    <script src="js/forms/string.js"></script>
+    <script src="js/forms/number.js"></script>
+    <script src="js/forms/geopoint.js"></script>
+    <script src="js/forms/boolean.js"></script>
+    <script src="js/forms/date.js"></script>
+    <script src="js/forms/reference.js"></script>
+    <script src="js/forms/array.js"></script>
+    <script src="js/forms/time.js"></script>
+    <script src="js/forms/file.js"></script>
+    <script src="js/initialize.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      // 実際のグループURIに変更してください。
+      CMS.Config.groupURI = "kiicloud://groups/0000000000000000000000000"; // admin_group
+//      CMS.Config.forceAclControl = true;
+      var content_fields = [
+        {
+          "key" : "description",
+          "label" : "テキスト",
+          "type" : "String"
+        }, {
+          "key" : "url",
+          "label" : "URL",
+          "type" : "String"
+        }
+      ];
+      var extend_form = [{
+          "id": 6,
+          "bucket" : "content",
+          "label" : "コンテンツ",
+          "fields" : [
+            {
+              "key" : "title",
+              "label" : "タイトル",
+              "type" : "String",
+              "required" : true,
+              "defaultValue" : "お知らせです"
+            },{
+              "key" : "description",
+              "label" : "テキスト",
+              "type" : "String",
+              "required" : true
+            }, {
+              "key" : "publishDate",
+              "label" : "配信時刻",
+              "type" : "Date",
+              "required" : true
+            }, {
+              "key" : "time",
+              "label" : "時刻",
+              "type" : "Time",
+              "defaultValue" : "10:59"
+            }
+          ],
+          "descriptionKeys" : ["title", "publishDate"],
+          "editable": false
+        }, {
+              "id": 7,
+              "bucket" : "push",
+              "label" : "PUSH通知",
+              "enableImageFile": false,
+              "fields": [
+                {
+                  "key" : "title",
+                  "label" : "タイトル",
+                  "type" : "String",
+                  "required" : true,
+                  "defaultValue": ""
+                }, {
+                  "key" : "message",
+                  "label" : "カスタムデータ",
+                  "type" : "String",
+                  "required" : false,
+                  "defaultValue": ""
+                }, {
+                  "key" : "topic",
+                  "label" : "topic名",
+                  "type" : "String",
+                  "required" : true,
+                  "defaultValue": ""
+                }, {
+                  "key" : "startDateTime",
+                  "label" : "配信日時",
+                  "type" : "Date",
+                  "required" : true,
+                  "defaultValue": ""
+                }
+              ],
+          "descriptionKeys" : ["title", "topic", "startDateTime"]
+            }
+      ];
+
+      CMS.Config.contentTrigerBucketName = "master";
+      CMS.InitializeContentTrigger(content_fields, extend_form);
+//      CMS.Config.scriptsBucketName = 'scripts';
+//      CMS.Initialize([
+//        {
+//          "id": 1,
+//          "bucket" : "news",
+//          "label" : "お知らせ",
+//          "fields" : [
+//            {
+//              "key" : "title",
+//              "label" : "タイトル",
+//              "type" : "String",
+//              "required" : true,
+//              "defaultValue" : "お知らせです",
+//              "validator": function (val) {
+//                if (val === "お知らせです") {
+//                  return 'title: invalid'
+//                }
+//              }
+//            },{
+//              "key" : "message",
+//              "label" : "メッセージ",
+//              "type" : "String",
+//              "required" : true
+//            },{
+//              "key": "limit",
+//              "label": "制限回数",
+//              "type": "Number",
+//            }, {
+//              "key" : "geo",
+//              "label" : "ポジション",
+//              "type" : "GeoPoint",
+//              "required" : true,
+//              "defaultValue" : "お知らせです",
+//              "validator": function (val) {
+//                if (val.lat < 1) {
+//                  return 'geo: invalid'
+//                }
+//              }
+//            }, {
+//              "key" : "ref",
+//              "label" : "参照",
+//              "type" : "Reference",
+//              "required" : true,
+//              "defaultValue" : "お知らせです"
+//            }, {
+//              "key" : "arr",
+//              "label" : "配列テスト",
+//              "type" : "Array",
+//              "required" : true,
+//              "defaultValue" : "お知らせです",
+//              "fields": [
+//                {
+//                  "key": "label1",
+//                  "label": "ラベル",
+//                  "type": "String",
+//                  "required" : true,
+//                  "defaultValue" : "aaaa",
+//                },
+//                {
+//                  "key": "endDate",
+//                  "label": "終了日",
+//                  "type": "Date"
+//                }
+//              ]
+//            }, {
+//              "key": "type",
+//              "label": "タイプ",
+//              "type": "String",
+//              "defaultValue": "タイプ１",
+//              "hidden": true
+//            }
+//           ],
+//          "descriptionKeys" : ["title", "geo", 'uuid'],
+//          "enableImageFile": true,
+//          "query": KiiClause.equals("type", "タイプ１")
+//        }, {
+//          "id": 2,
+//          "bucket" : "news",
+//          "label" : "お知らせ２",
+//          "fields" : [
+//            {
+//              "key" : "title",
+//              "label" : "タイトル",
+//              "type" : "String",
+//              "required" : true,
+//              "defaultValue" : "お知らせです",
+//              "validator": function (val) {
+//                if (val === "お知らせです") {
+//                  return 'title: invalid'
+//                }
+//              }
+//            },{
+//              "key" : "message",
+//              "label" : "メッセージ",
+//              "type" : "String",
+//              "required" : true
+//            },{
+//              "key": "limit",
+//              "label": "制限回数",
+//              "type": "Number",
+//            },{
+//              "key": "type",
+//              "label": "タイプ",
+//              "type": "String",
+//              "defaultValue": "2",
+//              "hidden": true
+//            }
+//           ],
+//          "descriptionKeys" : ["title", "limit", 'uuid'],
+//          "query": KiiClause.equals("type", "2")
+//        }, {
+//          "id": 3,
+//          "bucket" : "content",
+//          "label" : "コンテンツ",
+//          "fields" : [
+//            {
+//              "key" : "title",
+//              "label" : "タイトル",
+//              "type" : "String",
+//              "required" : true,
+//              "defaultValue" : "お知らせです"
+//            },{
+//              "key" : "description",
+//              "label" : "内容",
+//              "type" : "String",
+//              "required" : true
+//            }, {
+//              "key" : "publishDate",
+//              "label" : "配信時刻",
+//              "type" : "Date",
+//              "required" : true
+//            }, {
+//              "key" : "time",
+//              "label" : "時刻",
+//              "type" : "Time",
+//              "defaultValue" : "10:59"
+//            }
+//          ],
+//          "descriptionKeys" : ["title", "publishDate"],
+//          "editable": false
+//        }
+//      ])
+    </script>
+  </body>
+</html>

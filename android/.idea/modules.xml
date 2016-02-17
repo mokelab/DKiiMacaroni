@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ContentTriggerLibrary.iml" filepath="$PROJECT_DIR$/ContentTriggerLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-cloud-sdk-v2.1.36/android-cloud-sdk-v2.1.36.iml" filepath="$PROJECT_DIR$/android-cloud-sdk-v2.1.36/android-cloud-sdk-v2.1.36.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/contenttriggerlibrary/contenttriggerlibrary.iml" filepath="$PROJECT_DIR$/contenttriggerlibrary/contenttriggerlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/locationobserver/locationobserver.iml" filepath="$PROJECT_DIR$/locationobserver/locationobserver.iml" />
+    </modules>
+  </component>
+</project>

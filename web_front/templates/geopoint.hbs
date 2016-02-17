@@ -1,0 +1,56 @@
+{{!-- Copyright 2016 Kii Consortium --}}
+{{!--  --}}
+{{!-- Licensed under the Apache License, Version 2.0 (the "License"); --}}
+{{!-- you may not use this file except in compliance with the License. --}}
+{{!-- You may obtain a copy of the License at --}}
+{{!--  --}}
+{{!--     http://www.apache.org/licenses/LICENSE-2.0 --}}
+{{!--  --}}
+{{!-- Unless required by applicable law or agreed to in writing, software --}}
+{{!-- distributed under the License is distributed on an "AS IS" BASIS, --}}
+{{!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. --}}
+{{!-- See the License for the specific language governing permissions and --}}
+{{!-- limitations under the License. --}}
+{{#if hidden}}
+  <input type="hidden" id="{{key}}" class="lat" value="{{value.lat}}">
+  <input type="hidden" id="{{key}}" class="lon" value="{{value.lon}}">
+{{else}}
+<div class="form-group">
+  <div class="col-sm-12">
+    <label class="control-label">
+      {{label}}
+      {{#if required}}
+        <span class='required' style='color: red'>*</span>
+      {{/if}}
+    </label>
+    <div class="row">
+      <div class="col-sm-3">
+        <label class="control-label">Latitude</label>
+        <div>
+          {{#if preview}}
+          <p class='form-control'>{{value.lat}}</p>
+          {{else}}
+
+          <input type="number" step='0.000001' id="{{key}}" class="form-control lat" value="{{value.lat}}">
+          {{/if}}
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <label class="control-label">Longitude</label>
+        <div>
+          {{#if preview}}
+          <p class='form-control'>{{value.lon}}</p>
+          {{else}}
+          <input type="number" step='0.000001' id="{{key}}" class="form-control lon" value="{{value.lon}}">
+          {{/if}}
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <img class="map img-thumbnail">
+        <p>Powered by MapQuest. <a href="http://cdn.mapquest.com/mq_legal/termsofuse.html">Terms</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}

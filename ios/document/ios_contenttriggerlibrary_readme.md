@@ -1,0 +1,126 @@
+## iOS版 ContentTriggerLibrary 利用に際する設定等
+
+---
+
+### 確認環境
+
+* XCode Version 6.4 (6E35b)
+* iOS SDK 8.4
+* KiiCloud SDK v2.1.29
+
+---
+
+### ContentTriggerLibrary.framework について
+
+ContentTriggerLibrary.framework は、KiiSDK.framework と LocationObserver.framework に依存します。
+
+---
+
+### 設定項目
+
+#### Build Phases -> Link Binary With Libraries
+
+* KiiSDK.framework 及び KiiSDK が要求する各種ライブラリ
+
+#### Build Phases -> Copy Files
+
+* ContentTriggerLibrary.framework 
+* LocationObserver.framework
+
+#### Info -> Custom iOS Target Properties
+
+* NSLocationAlwaysUsageDescription を追加（ジオフェンスの許可を求める際のメッセージを設定する）
+
+---
+
+### 実装手引き
+
+1． KiiSDK を初期化し、KiiUser にログインする。  
+詳細は KiiSDK 公式を参照。
+
+2．ContentTrigger に GroupId を設定する
+
+```m
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	//
+	//Kiiの初期化(省略)
+	//
+	
+	//ContentTriggerの初期化
+	CTLContentTrigger* contentTrigger = [CTLContentTrigger sharedInstance];
+	contentTrigger.groupId = kGroupId; //GroupId
+    
+    //後略
+}
+```
+
+
+3．コールバック処理を実装をする。※entryに含まれる情報は本テキストの最後に記す
+
+```m
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+	//Kii, ContentTriggerの初期化（省略） 
+  
+  	//ジオフェンスによる起動の場合のハンドリング
+    UILocalNotification* notification;
+    if ((notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocationKey])) {
+		CTLObserveResult* result = [[CTLContentTrigger sharedInstance] observerResultFromUserInfo:notification.userInfo];
+    	
+    	//結果処理
+    }
+}
+
+//ContentTrigger からのコールバックのハンドリング
+-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+	//トリガ制御用のNotificationを処理する
+    if (![[CTLContentTrigger sharedInstance] updateEssentiallyTriggerFromNotification:notification]) {
+        CTLObserveResult* result = [[CTLContentTrigger sharedInstance] observerResultFromUserInfo:notification.userInfo];
+
+		//結果処理
+    }
+}
+```
+
+4．任意のタイミングでトリガ情報を更新する。
+
+```m
+[contentTrigger fetchWithBlock:^(NSArray* triggers, NSError *error) {
+    if (error) {
+        return;
+    }   
+    [contentTrigger updateTriggers:triggers];
+}];
+```
+
+5．必要に応じて通信を行い、コンテンツ情報を取得する。
+
+```m
+[[CTLContentTrigger sharedInstance] loadContentWithObserveResult:result block:^(CTLEntry* entry, NSDictionary* result, NSError *error) {
+    if (error) {
+        return;
+    }
+    
+    //処理
+}];
+```
+
+
+### ObserveResult から得られる情報一覧
+
+* NSInteger action  
+REGION_ENTER or REGION_EXIT のどちらかが入る。対象の領域の出入りを表す。
+
+* NSString* observeEntry->entryId
+ContentTriggerクラスの requestEntryContents:withBlock: で対になるコンテンツを取得する際に用いる。
+
+* NSDictionary observeEntry->options
+検出のトリガとなるパラメータが格納される。キーは以下の通り
+
+	* latitude : ジオフェンスの緯度
+	* longitude : ジオフェンスの経度
+	* radius : ジオフェンスの半径(m)
+	* UUID : iBeaconのUUID
+	* major : iBeaconのmajorId
+	* minor : iBeaconのminorId
+	* RSSI : iBeaconのRSSI強度

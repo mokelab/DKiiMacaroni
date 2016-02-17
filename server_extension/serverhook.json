@@ -1,0 +1,26 @@
+{
+  "kiicloud://groups/*/buckets/master": [
+    {
+      "when": "DATA_OBJECT_CREATED",
+      "what": "EXECUTE_SERVER_CODE",
+      "endpoint": "copyTrigger"
+    },
+    {
+      "when": "DATA_OBJECT_UPDATED",
+      "what": "EXECUTE_SERVER_CODE",
+      "endpoint": "copyTrigger"
+    }
+  ],  
+  "kiicloud://groups/*/buckets/push": [
+    {
+      "when": "DATA_OBJECT_CREATED",
+      "what": "EXECUTE_SERVER_CODE",
+      "endpoint": "scheduleRegist"
+    },
+    {
+      "when": "DATA_OBJECT_UPDATED",
+      "what": "EXECUTE_SERVER_CODE",
+      "endpoint": "scheduleRegist"
+    }
+  ]
+}
